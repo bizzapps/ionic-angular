@@ -9,4 +9,16 @@
 
 <ion-content>
 <ion-button color="primary" (click)="onBookPlace()">Book</ion-button>
+<ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> {{place.title}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img [src]="place.imageUrl"></ion-img>
+      <p>{{place.description}}</p>
+      <ion-label>Rate: {{place.price | currency}} / Night</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-item>
 </ion-content>

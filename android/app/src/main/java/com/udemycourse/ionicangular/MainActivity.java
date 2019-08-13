@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.udemycourse.ionicangular;
 
 import android.os.Bundle;
 
