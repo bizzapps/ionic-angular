@@ -26,6 +26,13 @@ export class PlacesService {
         'The 5 star hotel at Sylhet ',
         'http://hotjobs.bdjobs.com/jobs/palaceresort/head24.jpg',
         250
+      ),
+      new Place(
+        'pl4',
+        'Ruposhi Bangla Hotel',
+        'The first 5 star hotel in Bangladesh',
+        'https://www.royaltoursbangladesh.com/images/hotels/Ruposhi%20Bangla%20Hotel%203.jpg',
+        450
       )
   ];
   get places() {
