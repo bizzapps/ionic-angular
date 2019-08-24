@@ -6,7 +6,7 @@ import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.page.html',
-  styleUrls: ['./auth.page.scss'],
+  styleUrls: ['./auth.page.scss']
 })
 export class AuthPage implements OnInit {
  isLoading = false;
@@ -17,10 +17,17 @@ export class AuthPage implements OnInit {
   onLoginClick() {
     this.authService.login();
     this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-      this.router.navigateByUrl('/places/tabs/discover');
-    }, 1500);
+    this.loadingController.create({
+      keyboardClose: true,
+      message: 'Login in ....'
+    }).then(loadingEl => {
+      loadingEl.present();
+      setTimeout(() => {
+        this.isLoading = false;
+        loadingEl.dismiss();
+        this.router.navigateByUrl('/places/tabs/discover');
+      }, 1500);
+    });
   }
 
 }

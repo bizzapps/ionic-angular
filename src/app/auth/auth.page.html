@@ -5,12 +5,26 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label position='floating'>Email</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-  </ion-list>
+  <form (ngSubmit)="onLoginClick()" #f="ngForm" >
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+        <ion-item>
+          <ion-label position='floating'>Email</ion-label>
+          <ion-input type="email" ngModel name="email" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size-sm="8" offset-sm="2">
+          <ion-item>
+            <ion-label position='floating'>Password</ion-label>
+            <ion-input type="password" ngModel name="password" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
   <ion-spinner *ngIf="isLoading"></ion-spinner>
-<ion-button color="primary" (click)="onLoginClick()" *ngIf="!isLoading">Login</ion-button>
+<ion-button color="primary" type="submit" *ngIf="!isLoading">Login</ion-button>
+</form>
 </ion-content>
